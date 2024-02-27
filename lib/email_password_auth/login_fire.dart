@@ -10,10 +10,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: "AIzaSyBnOUuyX1k1DLl7FyaU8gFj_CH6Evp9iZk",
-          appId: "1:526881800339:android:a4ad1898b85bf2605c0d66",
+          apiKey: "AIzaSyC6JhXeFVFsPNckH6p3v0H4RJdd9Xvt-Kg",
+          appId: "1:733933513804:android:0477ac9d0d7e4e99b318e9",
           messagingSenderId: "",
-          projectId: "healthy-reason-330908"));
+          projectId: "fieabsenov"));
   User? user = FirebaseAuth.instance.currentUser;
   runApp(MaterialApp(
     home: user == null ? Login_Fire() : Home_Fire(),
