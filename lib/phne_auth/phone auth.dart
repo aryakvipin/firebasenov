@@ -6,10 +6,15 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'home.dart';
 
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyC6JhXeFVFsPNckH6p3v0H4RJdd9Xvt-Kg",
+          appId: "1:733933513804:android:0477ac9d0d7e4e99b318e9",
+          messagingSenderId: "",
+          projectId: "fieabsenov")
   );
   runApp(const MyApp());
 }
@@ -66,12 +71,10 @@ class _MyAppState extends State<MyApp> {
         .signInWithCredential(credential)
         .then((value) async {
       if (value.user != null) {
-        Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => Home()),
-                (route) => false);
-      }
-    });
+
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Home()));
+      }    });
   }
 
   @override
@@ -125,7 +128,11 @@ class _MyAppState extends State<MyApp> {
                   verifyUserPhoneNumber();
                 }
                 FocusManager.instance.primaryFocus?.unfocus();
-              },
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()));
+    }
+    ,
               child: Text(
                 otpFieldVisibility ? 'Login' : 'Verify',
               ),

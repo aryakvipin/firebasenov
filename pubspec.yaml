@@ -39,6 +39,8 @@ dependencies:
   firebase_auth:
   intl_phone_field:
   get:
+  firebase_storage:
+  image_picker:
 
 dev_dependencies:
   flutter_test:
